@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">AutoUI Excitement 1</string>
+    <string name="button_displayAcceleration">Display Acceleration</string>
+    <string name="button_displayLocation">Display Location</string>
+</resources>
