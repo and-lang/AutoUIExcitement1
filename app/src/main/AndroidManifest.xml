@@ -27,12 +27,9 @@
             android:name=".DisplayAccelerometerDataActivity"
             android:parentActivityName=".MainActivity" />
         <activity
-            android:name=".DisplayLocationDataActivity"
-            android:parentActivityName=".MainActivity" />
-        <activity
             android:name="com.example.andre.autouiexcitement1.MapsActivity"
             android:label="@string/title_activity_maps"
-            android:parentActivityName=".DisplayLocationDataActivity" />
+            android:parentActivityName=".MainActivity" />
     </application>
 
 </manifest>

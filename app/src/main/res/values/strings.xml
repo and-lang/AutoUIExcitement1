@@ -3,5 +3,4 @@
     <string name="button_displayAcceleration">Display Acceleration</string>
     <string name="button_displayLocation">Display Location</string>
     <string name="title_activity_maps">Map</string>
-    <string name="extra_location">Location</string>
 </resources>
