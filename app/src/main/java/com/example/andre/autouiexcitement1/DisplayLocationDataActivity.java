@@ -22,7 +22,8 @@ import com.google.android.gms.location.LocationServices;
 
 public class DisplayLocationDataActivity extends AppCompatActivity implements
         GoogleApiClient.ConnectionCallbacks,
-        GoogleApiClient.OnConnectionFailedListener, LocationListener {
+        GoogleApiClient.OnConnectionFailedListener,
+        LocationListener {
 
     private static final int PERMISSION_REQUEST_CODE = 4242;
     private static final int PLAY_SERVICES_RESOLUTION_REQUEST = 4343;
@@ -44,6 +45,7 @@ public class DisplayLocationDataActivity extends AppCompatActivity implements
         latitudeText = (TextView) findViewById((R.id.textViewLatValue));
         longitudeText = (TextView) findViewById((R.id.textViewLongValue));
 
+        // check for permissions and perform init
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) !=
                 PackageManager.PERMISSION_GRANTED
                 && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) !=
