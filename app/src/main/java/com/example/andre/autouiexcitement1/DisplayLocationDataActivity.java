@@ -42,23 +42,23 @@ public class DisplayLocationDataActivity extends AppCompatActivity implements
         latitudeText = (TextView) findViewById((R.id.textViewLatValue));
         longitudeText = (TextView) findViewById((R.id.textViewLongValue));
 
-//        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) !=
-//                PackageManager.PERMISSION_GRANTED
-//                && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) !=
-//                PackageManager.PERMISSION_GRANTED) {
-//            ActivityCompat.requestPermissions(this, new String[]{
-//                    Manifest.permission.ACCESS_FINE_LOCATION,
-//                    Manifest.permission.ACCESS_COARSE_LOCATION
-//            }, PERMISSION_REQUEST_CODE);
-//        } else {
-//            if (checkPlayServices()) {
-//                buildGoogleApiClient();
-//                createLocationRequest();
-//            }
-//        }
-//
-//        requestingLocationUpdates = true;
-//        displayLastLocation();
+        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) !=
+                PackageManager.PERMISSION_GRANTED
+                && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) !=
+                PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(this, new String[]{
+                    Manifest.permission.ACCESS_FINE_LOCATION,
+                    Manifest.permission.ACCESS_COARSE_LOCATION
+            }, PERMISSION_REQUEST_CODE);
+        } else {
+            if (checkPlayServices()) {
+                buildGoogleApiClient();
+                createLocationRequest();
+            }
+        }
+
+        requestingLocationUpdates = true;
+        displayLastLocation();
     }
 
     // display the last known location in the text fields
