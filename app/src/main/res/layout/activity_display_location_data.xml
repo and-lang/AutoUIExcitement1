@@ -25,6 +25,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="32dp"
+        android:layout_marginStart="32dp"
         android:text="Lat"
         android:textAlignment="center"
         android:textSize="24sp"
@@ -36,6 +37,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="32dp"
+        android:layout_marginStart="32dp"
         android:text="Long"
         android:textAlignment="center"
         android:textSize="24sp"
@@ -63,5 +65,17 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewLatValue" />
+
+    <Button
+        android:id="@+id/button_showMap"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:onClick="showMap"
+        android:text="Show Map"
+        android:textSize="24sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewLongValue" />
 
 </android.support.constraint.ConstraintLayout>

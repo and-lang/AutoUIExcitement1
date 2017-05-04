@@ -1,6 +1,7 @@
 package com.example.andre.autouiexcitement1;
 
 import android.Manifest;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Location;
 import android.support.annotation.NonNull;
@@ -8,6 +9,7 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -119,6 +121,7 @@ public class DisplayLocationDataActivity extends AppCompatActivity implements
         return true;
     }
 
+    // request periodic location updates
     private void startLocationUpdates() {
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
             return;
@@ -126,8 +129,17 @@ public class DisplayLocationDataActivity extends AppCompatActivity implements
         LocationServices.FusedLocationApi.requestLocationUpdates(googleApiClient, locationRequest, this);
     }
 
+    // stop getting periodic location updates
     private void stopLocationUpdates() {
         LocationServices.FusedLocationApi.removeLocationUpdates(googleApiClient, this);
+    }
+
+    // show map for displaying the location
+    public void showMap(View view) {
+        Intent intent = new Intent(this, MapsActivity.class);
+        String extra = getResources().getString(R.string.extra_location);
+        intent.putExtra(extra, lastLocation);
+        startActivity(intent);
     }
 
     // build GoogleApiClient when permission was granted by user
