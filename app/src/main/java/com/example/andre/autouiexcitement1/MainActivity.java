@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void showLocationData(View view) {
-        Intent intent = new Intent(this, DisplayLocationDataActivity.class);
-        startActivity(intent);
+//        Intent intent = new Intent(this, DisplayLocationDataActivity.class);
+//        startActivity(intent);
     }
 }
